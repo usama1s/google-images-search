@@ -1,41 +1,31 @@
 import React from "react";
 import Slider from "react-slick";
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 function Sliderdata( {data}) {
 
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
+    autoplay: true,
+    slidesToShow: 3,
     slidesToScroll: 1,
+    arrows: true,
   };
  
   return (
     
-      <Slider {...settings}>
+      
            <Slider {...settings}>
-      <div>
-        <h3>1</h3>
-      </div>
-      <div>
-        <h3>2</h3>
-      </div>
-      <div>
-        <h3>3</h3>
-      </div>
-      <div>
-        <h3>4</h3>
-      </div>
-      <div>
-        <h3>5</h3>
-      </div>
-      <div>
-        <h3>6</h3>
-      </div>
+      {data.map((content)=><div style={{display:"flex",flexDirection:"row",gap:"10px"}}>
+        <img src={content.image} width={200} height={100} alt="" />
+        <p>{content.title}</p>
+      
+      </div>)}
     </Slider>
-      </Slider>
     
+  
   );
 }
 
