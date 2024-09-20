@@ -1,6 +1,7 @@
 import logo from "./logo.svg";
 // import "./App.css";
 import Sliderdata from "./components/slider";
+import Card from "./components/card";
 
 function App() {
   const sliderData = [
@@ -21,7 +22,12 @@ function App() {
       title: "Hello",
     },
   ];
-  return <Sliderdata data={sliderData} />;
+  return (
+    <>
+      <Sliderdata data={sliderData} />
+      <Card />
+    </>
+  );
 }
 
 export default App;
