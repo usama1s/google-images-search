@@ -1,0 +1,11 @@
+.img-slider {
+    max-height: 48px;
+}
+
+.slider-container {
+    display: flex !important;
+    /* flex-direction: row !important;
+    align-items: center !important;
+    justify-content: start !important; */
+
+}
