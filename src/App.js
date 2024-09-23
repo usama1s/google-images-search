@@ -21,6 +21,30 @@ function App() {
       image: "./slider/image4.jpg",
       title: "Hello",
     },
+    {
+      image: "./slider/image4.jpg",
+      title: "Hello",
+    },
+    {
+      image: "./slider/image4.jpg",
+      title: "Hello",
+    },
+    {
+      image: "./slider/image4.jpg",
+      title: "Hello",
+    },
+    {
+      image: "./slider/image4.jpg",
+      title: "Hello",
+    },
+    {
+      image: "./slider/image4.jpg",
+      title: "Hello",
+    },
+    {
+      image: "./slider/image4.jpg",
+      title: "Hello",
+    },
   ];
   return (
     <>

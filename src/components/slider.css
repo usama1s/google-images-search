@@ -1,11 +1,25 @@
-.img-slider {
-    max-height: 48px;
-}
+
 
 .slider-container {
     display: flex !important;
-    /* flex-direction: row !important;
-    align-items: center !important;
-    justify-content: start !important; */
+    height: 48px;
+    width: 100%;
+    box-shadow: inset 0 0 0 1px #444746;
+    border-radius: 8px;
+    cursor: pointer;
+    overflow: hidden;
 
+}
+.img-slider{
+    align-items: center;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    height: 46px;
+    width: 46px;
+}
+.slick-track{
+    display: flex !important;
+    gap: 8px;
+    padding-bottom: 16px;
 }

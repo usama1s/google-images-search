@@ -1,0 +1,16 @@
+.footer-logo-text img {
+    height: 100%;
+    max-height: 12px !important;
+}
+
+
+.footer-logo-text p {
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: .2px;
+    color: #474747 !important;
+}
+
+.footer-logo-text .text-heading {
+    color: #5e5e5e !important;
+}
