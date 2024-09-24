@@ -1,0 +1,42 @@
+body{
+    background-color: #1f1f1f;
+}
+.main-card{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    overflow-x: scroll;
+    white-space: nowrap;
+    margin: 30px;
+    
+}
+.main-card::-webkit-scrollbar {
+   /* visibility: hidden; */
+   display: none;
+}
+.svg-left {
+        background: linear-gradient(to left, transparent 0%, #e8e8e8 60%, #1f1f1f);
+    }
+ 
+.svg-left img{
+    position: absolute;
+    left: 10px;
+    top: 30px;
+    width: 48px;
+    height: 45px;
+}
+.svg-left img:hover{
+    background-color: #28292a;
+    border-radius: 50%;
+}
+.svgright{
+    position: absolute;
+    right: 0;
+    top: 35px;
+    width: 45px;
+    height: 40px;
+}
+.svgright img:hover{
+    background-color: #28292a;
+    border-radius: 50%;
+}
