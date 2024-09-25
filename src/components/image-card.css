@@ -1,47 +1,66 @@
 .image-item {
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-.image-item .img {
-  height: 180px;
-}
-
-.image-item .img img {
-  height: 100%;
-  width: auto;
-}
-.image-item .icon {
-  background: #fff;
-  border-radius: 2px;
-  overflow: hidden;
-  width: 12px;
-  height: 12px;
-}
-.image-item .icon img {
-  max-width: 100%;
-  max-height: 100%;
-}
-.image-item p {
-  font-size: 14px;
-  line-height: 22px;
-  letter-spacing: 0.2px;
-  color: #fff !important;
-}
-
-.image-item h2 {
-  color: #fff !important;
-  text-overflow: ellipsis;
-  overflow: hidden;
-
-  height: 22px;
-  white-space: nowrap;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  line-height: 22px;
-  letter-spacing: 0.2px;
-  max-width: 100%;
-  width: 100%;
-  min-width: 1px;
-  overflow: hidden;
-}
+    display: flex;
+    flex-direction: column;
+  position: relative;
+    overflow: hidden;
+    width: fit-content; /* Ensure the item container fits the image width */
+  }
+  
+  .image-item .img {
+        margin-bottom: 48px;
+    height: 180px;
+    width: fit-content; /* This ensures the width adapts to the image's width */
+  }
+  
+  .image-item .content{
+        position: absolute;
+    width: 100%;
+    overflow: hidden;
+    left: 0;
+    bottom: 0;
+  }
+  .image-item .img img {
+    height: 100%;
+    width: auto; /* Ensures the image maintains its aspect ratio */
+  }
+  
+  .image-item .icon {
+    background: #fff;
+    border-radius: 2px;
+    overflow: hidden;
+    width: 12px;
+    height: 12px;
+  }
+  
+  .image-item .icon img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+  
+  .image-item p {
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0.2px;
+    color: #fff !important;
+    max-width: 100%; /* Match width to the container */
+    white-space: nowrap; /* Prevent text wrapping */
+    overflow: hidden; /* Hide overflow text */
+    text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+  }
+  
+  .image-item h2 {
+    color: #fff !important;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    height: 22px;
+    white-space: nowrap;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0.2px;
+    max-width: 100%; /* Match width to the container */
+    width: 100%; /* Ensure width takes up available space */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Add ellipsis for overflowed text */
+  }
+  

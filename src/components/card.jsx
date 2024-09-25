@@ -5,7 +5,7 @@ const Card = ({ image, text }) => {
   return (
     <>
       <div className="slider-img">
-        <div className="image">
+        <div className="img">
           <img src={image} alt="" />
         </div>
         <div className="text">

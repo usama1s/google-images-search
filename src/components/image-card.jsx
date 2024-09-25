@@ -9,6 +9,7 @@ function ImageCard({image1, image2, text, paragraph}) {
         <div className="img">
           <img src={image1} alt="" />
         </div>
+        <div className="content">
         <div className="description">
           <div className="icon">
           <img src={image2}/>
@@ -17,6 +18,8 @@ function ImageCard({image1, image2, text, paragraph}) {
           <p>{paragraph}</p>
         </div>
         <h2>{text}</h2>
+        </div>
+        
       </a>
     </>
   );
