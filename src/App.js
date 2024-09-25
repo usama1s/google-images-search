@@ -67,6 +67,30 @@ function App() {
       icon: "/slider/image3.jpg",
     },
     {
+      image: "/slider/image5.jpg",
+      title: "Hello",
+      description: "test",
+      icon: "/slider/image4.jpg",
+    },
+    {
+      image: "/slider/image1.jpg",
+      title: "Hello",
+      description: "test",
+      icon: "/slider/image1.jpg",
+    },
+    {
+      image: "/slider/image5.jpg",
+      title: "Hello Hi Hello Hi Hello Hi Hello Hi ",
+      description: "test",
+      icon: "/slider/image2.jpg",
+    },
+    {
+      image: "/slider/image3.jpg",
+      title: "Hello",
+      description: "test",
+      icon: "/slider/image5.jpg",
+    },
+    {
       image: "/slider/image4.jpg",
       title: "Hello",
       description: "test",
@@ -82,7 +106,7 @@ function App() {
       image: "/slider/image2.jpg",
       title: "Hello Hi Hello Hi Hello Hi Hello Hi ",
       description: "test",
-      icon: "/slider/image2.jpg",
+      icon: "/slider/image5.jpg",
     },
     {
       image: "/slider/image3.jpg",
@@ -94,31 +118,7 @@ function App() {
       image: "/slider/image4.jpg",
       title: "Hello",
       description: "test",
-      icon: "/slider/image4.jpg",
-    },
-    {
-      image: "/slider/image1.jpg",
-      title: "Hello",
-      description: "test",
-      icon: "/slider/image1.jpg",
-    },
-    {
-      image: "/slider/image2.jpg",
-      title: "Hello Hi Hello Hi Hello Hi Hello Hi ",
-      description: "test",
-      icon: "/slider/image2.jpg",
-    },
-    {
-      image: "/slider/image3.jpg",
-      title: "Hello",
-      description: "test",
-      icon: "/slider/image3.jpg",
-    },
-    {
-      image: "/slider/image4.jpg",
-      title: "Hello",
-      description: "test",
-      icon: "/slider/image4.jpg",
+      icon: "/slider/image5.jpg",
     },
   ];
   console.log(imagesList);
