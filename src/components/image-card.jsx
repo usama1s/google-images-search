@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./image-card.css";
 
 
 function ImageCard({image1, image2, text, paragraph}) {
