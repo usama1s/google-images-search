@@ -1,18 +1,17 @@
-.Card{
+.slider-img{
     display: flex;
     align-items: center;
     box-shadow: inset 0 0 0 1px #444746;
     border-radius: 8px;
     overflow: hidden;
-    height: 50px;
-    
+    height: 50px; 
 }
-.card-image img{
+.slider-img .img{
     min-width: 70px;    
     height: 48px;
     margin-right: 12px;
 }
-.card-textbox h1{
+.slider-img .text h1{
    color: #fff;
    font-size: 14px;
    font-weight: 500;

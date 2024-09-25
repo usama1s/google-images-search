@@ -1,95 +1,149 @@
 import Card from "./components/card";
 import ImageCard from "./components/image-card";
-import logo from "./logo.svg";
-import image1 from "../src/slider/image1.jpg";
-import ukflag from "../src/slider/uk-flag.png";
-import svgleft from "../src/slider/svgviewer-output (1).png"
-import svgright from "../src/slider/svgviewer-output (2).png"
 
 import "./App.css";
 
 function App() {
-  const sliderData = [];
+  const sliderData = [
+    {
+      image: "/slider/image1.jpg",
+      title: "Hi",
+    },
+    {
+      image: "/slider/image2.jpg",
+      title: "test",
+    },
+    {
+      image: "/slider/image3.jpg",
+      title: "Hello",
+    },
+    {
+      image: "/slider/image4.jpg",
+      title: "Hello",
+    },
+    {
+      image: "/slider/image1.jpg",
+      title: "Hello",
+    },
+    {
+      image: "/slider/image2.jpg",
+      title: "Hello",
+    },
+    {
+      image: "/slider/image3.jpg",
+      title: "Hello",
+    },
+    {
+      image: "/slider/image4.jpg",
+      title: "Hello",
+    },
+    {
+      image: "/slider/image1.jpg",
+      title: "Hello",
+    },
+    {
+      image: "/slider/image4.jpg",
+      title: "Hello",
+    },
+  ];
+
+  const imagesList = [
+    {
+      image: "/slider/image1.jpg",
+      title: "Hello",
+      description: "test",
+      icon: "/slider/image1.jpg",
+    },
+    {
+      image: "/slider/image2.jpg",
+      title: "Hello Hi Hello Hi Hello Hi Hello Hi ",
+      description: "test",
+      icon: "/slider/image2.jpg",
+    },
+    {
+      image: "/slider/image3.jpg",
+      title: "Hello",
+      description: "test",
+      icon: "/slider/image3.jpg",
+    },
+    {
+      image: "/slider/image4.jpg",
+      title: "Hello",
+      description: "test",
+      icon: "/slider/image4.jpg",
+    },
+    {
+      image: "/slider/image1.jpg",
+      title: "Hello",
+      description: "test",
+      icon: "/slider/image1.jpg",
+    },
+    {
+      image: "/slider/image2.jpg",
+      title: "Hello Hi Hello Hi Hello Hi Hello Hi ",
+      description: "test",
+      icon: "/slider/image2.jpg",
+    },
+    {
+      image: "/slider/image3.jpg",
+      title: "Hello",
+      description: "test",
+      icon: "/slider/image3.jpg",
+    },
+    {
+      image: "/slider/image4.jpg",
+      title: "Hello",
+      description: "test",
+      icon: "/slider/image4.jpg",
+    },
+    {
+      image: "/slider/image1.jpg",
+      title: "Hello",
+      description: "test",
+      icon: "/slider/image1.jpg",
+    },
+    {
+      image: "/slider/image2.jpg",
+      title: "Hello Hi Hello Hi Hello Hi Hello Hi ",
+      description: "test",
+      icon: "/slider/image2.jpg",
+    },
+    {
+      image: "/slider/image3.jpg",
+      title: "Hello",
+      description: "test",
+      icon: "/slider/image3.jpg",
+    },
+    {
+      image: "/slider/image4.jpg",
+      title: "Hello",
+      description: "test",
+      icon: "/slider/image4.jpg",
+    },
+  ];
+  console.log(imagesList);
+
   return (
     <>
-      <div className="main-card" >
-        <div className="svg-left">
-        <img  src={svgleft} />
+      <div className="main-card">
+        <div className="card-container">
+          <button>Left</button>
+          {sliderData.map((item) => (
+            <Card text={item.title} image={item.image} />
+          ))}
+          <button>Right</button>
         </div>
-       <div>
-       <Card text="hello bro" image={image1} />
-       </div>
-       <div>
-       <Card text="hello bbbbbbb" image={image1} />
-       </div>
-       <div>
-       <Card text="hello bro" image={image1} />
-       </div>
-       <div>
-       <Card text="hello bro" image={image1} />
-       </div>
-       <div>
-       <Card text="hello bro" image={image1} />
-       </div>
-       <div>
-       <Card text="hello bro" image={image1} />
-       </div>
-       <div>
-       <Card text="hello bro" image={image1} />
-       </div>
-       <div>
-       <Card text="hello bro" image={image1} />
-       </div>
-       <div>
-       <Card text="hello bro" image={image1} />
-       </div>
-       <div>
-       <Card text="hello bro" image={image1} />
-       </div>
-       <div>
-       <Card text="hello bro" image={image1} />
-       </div>
-       <div>
-       <Card text="hello bro" image={image1} />
-       </div>
-       <div>
-       <Card text="hello bro" image={image1} />
-       </div>
-       <div>
-       <Card text="hello bro" image={image1} />
-       </div>
-       <div>
-       <Card text="hello bro" image={image1} />
-       </div>
-          <div>
-       <Card text="hello bro" image={image1} />
-       </div>
-       <div>
-       <Card text="hello bro" image={image1} />
-       </div>
-       <div>
-       <Card text="hello bro" image={image1} />
-       </div>
-       <div>
-       <Card text="hello bro" image={image1} />
-       </div>
-       <div>
-       <Card text="hello bro" image={image1} />
-       </div>
-       <div>
-       <Card text="hello bro" image={image1} />
-       </div>
-       <div>
-       <Card text="hello bro" image={image1} />
-       </div>
-
-       <div className="svgright">
-       <img src={svgright} />  
+        <div className="images-list">
+          {imagesList.map((item) => (
+            <ImageCard
+              image1={item.image}
+              image2={item.icon}
+              text={item.title}
+              paragraph={item.description}
+            />
+          ))}
         </div>
-       
       </div>
-      
-      <ImageCard image1={image1} image2={ukflag}  text="hello bro" paragraph="4k best welpaper" />
     </>
   );
 }

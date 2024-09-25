@@ -1,16 +1,20 @@
-.footer-logo-text img {
-    height: 100%;
-    max-height: 12px !important;
+.img-item{
+display: flex;
+}
+.img-item .img{
+
 }
 
 
-.footer-logo-text p {
+
+
+.img-item p {
     font-size: 14px;
     line-height: 22px;
     letter-spacing: .2px;
     color: #fff !important;
 }
 
-.footer-logo-text .text-heading {
+.img-item h2 {
     color: #fff !important;
 }
