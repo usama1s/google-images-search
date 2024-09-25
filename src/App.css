@@ -22,6 +22,7 @@ body{
     flex-wrap: nowrap; /* Ensures the cards are in one line */
     overflow-x: auto; /* Allows horizontal scrolling if content overflows */
     gap: 20px;
+    margin-top: 20px;
   }
   .card-container::-webkit-scrollbar {
     height: 8px; /* Height of horizontal scrollbar */
@@ -32,8 +33,19 @@ body{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
+    gap: 30px;
+    padding: 20px 40px;
+  }
+  .card-container button{
+    color: #fff;
+  }
+  .card-container button img{
+    height: 24px;
+    width: 24px;
+  }
+  .card-container button img:hover{
+    background-color: #9e9e9e;
+    border-radius: 50%;
   }
   
 
