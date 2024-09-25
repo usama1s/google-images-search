@@ -28,8 +28,14 @@ body{
     display: none;
   }
 
-  .images-list{
+  .images-list {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-  }
+    justify-content: flex-start;
+    flex-wrap: wrap; /* This allows wrapping when the container is full */
+    gap: 10px;
+}
+/* 
+.images-list::after {
+    content: "";
+ flex:auto;} */
