@@ -36,3 +36,37 @@ body{
     padding: 20px;
   }
   
+
+  @media screen and (max-width: 767px){
+    /* .images-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 20px;
+        width: 100%;
+      }
+      
+      .images-list  .image-item  {
+        width: 100%;
+      }
+      
+      .images-list  .image-item:nth-child(odd) {
+        grid-column: 1; 
+      }
+      
+      .images-list  .image-item:nth-child(even) {
+        grid-column: 2;
+      }
+      .images-list .image-item .img{
+        height: 200px;
+      }
+      .images-list .image-item .img img{
+        width: 100%;
+        height: auto;
+        max-width: 0;
+        max-height: 0;
+        min-width: 0;
+        min-height: 0;
+        object-fit: none;
+      } */
+      
+  }
