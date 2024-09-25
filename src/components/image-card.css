@@ -4,12 +4,15 @@
   position: relative;
     overflow: hidden;
     width: fit-content; /* Ensure the item container fits the image width */
+    flex-grow: 1;
   }
   
   .image-item .img {
-        margin-bottom: 48px;
+    margin-bottom: 48px;
     height: 180px;
-    width: fit-content; /* This ensures the width adapts to the image's width */
+    width: fit-content;
+    min-width: 100%;
+    overflow: hidden;
   }
   
   .image-item .content{
@@ -21,7 +24,12 @@
   }
   .image-item .img img {
     height: 100%;
-    width: auto; /* Ensures the image maintains its aspect ratio */
+    width: auto;
+    min-width: 100%;
+    /* min-height: 100%; */
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
   }
   
   .image-item .icon {
