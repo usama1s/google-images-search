@@ -1,5 +1,5 @@
 import React from "react";
-import "./Card.css";
+import "./card.css";
 
 const Card = ({ image, text }) => {
   return (
@@ -15,5 +15,7 @@ const Card = ({ image, text }) => {
     </>
   );
 };
+
+
 
 export default Card;

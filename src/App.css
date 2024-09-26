@@ -1,56 +1,240 @@
-body{
-    background-color: #1f1f1f;
+body {
+  background-color: #1f1f1f;
 }
 
 .main-card::-webkit-scrollbar {
-   /* visibility: hidden; */
-   display: none;
+  /* visibility: hidden; */
+  display: none;
 }
 
-.main-card{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    overflow-x: scroll;
-    white-space: nowrap;
-
-    
+.main-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  overflow-x: scroll;
+  white-space: nowrap;
 }
 .card-container {
-    display: flex;
-    flex-wrap: nowrap; /* Ensures the cards are in one line */
-    overflow-x: auto; /* Allows horizontal scrolling if content overflows */
-    gap: 20px;
-    margin-top: 20px;
-  }
-  .card-container::-webkit-scrollbar {
-    height: 8px; /* Height of horizontal scrollbar */
-    display: none;
-  }
+  display: flex;
+  flex-wrap: nowrap; /* Ensures the cards are in one line */
+  overflow-x: auto; /* Allows horizontal scrolling if content overflows */
+  gap: 20px;
+  margin-top: 20px;
+}
+.card-container::-webkit-scrollbar {
+  height: 8px; /* Height of horizontal scrollbar */
+  display: none;
+}
 
-  .images-list {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 30px;
-    padding: 20px 40px;
-  }
-  .card-container button{
-    color: #fff;
-  }
-  .card-container button img{
-    height: 24px;
-    width: 24px;
-  }
-  .card-container button img:hover{
-    background-color: #9e9e9e;
-    border-radius: 50%;
-  }
-  
+.images-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 20px 40px;
+}
+.card-container button {
+  color: #fff;
+}
+.card-container button img {
+  height: 24px;
+  width: 24px;
+}
+.card-container button img:hover {
+  background-color: #9e9e9e;
+  border-radius: 50%;
+}
 
-  @media screen and (max-width: 767px){
-    /* .images-list {
+/* -----------------modelcard */
+.ReactModal__Content {
+  background-color: #202124 !important;
+  inset: 13% 0px auto 65% !important;
+  border-radius: 20px !important;
+  border: 1px solid #202124 !important;
+  padding: 6px 16px !important;
+}
+.ReactModal__Overlay {
+  background-color: transparent !important;
+}
+
+.ReactModal__Content {
+  overflow-y: auto !important;
+  max-height: calc(101vh - 80px) !important;
+}
+
+.ReactModal__Content::-webkit-scrollbar {
+  width: 8px !important;
+}
+
+.ReactModal__Content::-webkit-scrollbar-track {
+  background: #f1f1f1 !important;
+}
+
+.ReactModal__Content::-webkit-scrollbar-thumb {
+  background: #888 !important;
+  border-radius: 10px !important;
+}
+
+.ReactModal__Content::-webkit-scrollbar-thumb:hover {
+  background: #555 !important;
+}
+
+.modelcard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.modelbox {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+}
+.modelimage img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+.modeltextbox h2 {
+  font-family: Google Sans, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #e8eaed;
+}
+.modelcard button img {
+  width: 60px;
+}
+.vistbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 0px;
+}
+.dispersion p {
+  font-family: Google Sans, Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #e8eaed;
+  max-width: 300px;
+}
+.vistbutton button {
+  align-items: center;
+  border-radius: 36px;
+  display: flex;
+  width: 100%;
+  background-color: #8ab4f8;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  padding-left: 15px;
+}
+.arrow-right img {
+  width: 40px;
+}
+.button-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #3c4043;
+  margin-bottom: 20px;
+}
+.share-button button {
+  align-items: center;
+  border-radius: 36px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  background-color: #394457;
+  min-height: 36px;
+  min-width: 190px;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #e8eaed;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+.share-img img {
+  width: 26px;
+}
+.save-button button {
+  align-items: center;
+  border-radius: 36px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  background-color: #394457;
+  min-height: 36px;
+  min-width: 190px;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #e8eaed;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+.save-button img {
+  width: 26px;
+}
+.arrowbox {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 0px 40px 0px 40px;
+}
+.arrowbox img {
+  width: 20px;
+}
+.optionbox img {
+  width: 20px;
+}
+
+.googleimg img {
+  height: 130px;
+  width: 176px;
+  border-radius: 20px;
+}
+.goolgebox {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  padding-left: 12px;
+}
+
+.google-icon img {
+  width: 12px;
+  height: 12px;
+}
+.google-texticon h1 {
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0;
+  color: #aaadb2;
+}
+.google-description p {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  color: #bdc1c6;
+  padding-left: 12px;
+}
+
+@media screen and (max-width: 767px) {
+  /* .images-list {
         display: grid;
         grid-template-columns: repeat(2, 1fr); 
         gap: 20px;
@@ -80,5 +264,4 @@ body{
         min-height: 0;
         object-fit: none;
       } */
-      
-  }
+}
