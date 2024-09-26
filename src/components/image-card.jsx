@@ -1,9 +1,10 @@
 import React from "react";
-import "./image-card.css";
+import "./Image-card.css";
 
-function ImageCard({ image1, image2, text, paragraph }) {
+function ImageCard({ image1, image2, text, paragraph ,handleOnClick }) {
+
   return (
-    <a className="image-item">
+    <a className="image-item" onClick={handleOnClick}>
       <div className="img">
         <img src={image1} alt="Main visual" />
       </div>

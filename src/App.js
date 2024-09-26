@@ -1,11 +1,46 @@
 import { useMemo, useState } from "react";
-import Card from "./components/card";
-import ImageCard from "./components/image-card";
+import Card from "./components/Card";
+import ImageCard from "./components/Image-card";
 
 import "./App.css";
 
+import Modal from "react-modal";
+
 function App() {
+  const [modalIsOpen, setModalOpen] = useState(false);
+  // const modalIsOpen = () => setModalOpen(true);
+  const closeModal = () => setModalOpen(false);
+
+  const openModal = () => {
+    console.log("openModal");
+    setModalOpen(true)};
+  
+
   const sliderData = [
+    {
+      image: "/slider/image1.jpg",
+      title: "Hi",
+    },
+    {
+      image: "/slider/image1.jpg",
+      title: "Hi",
+    },
+    {
+      image: "/slider/image1.jpg",
+      title: "Hi",
+    },
+    {
+      image: "/slider/image1.jpg",
+      title: "Hi",
+    },
+    {
+      image: "/slider/image1.jpg",
+      title: "Hi",
+    },
+    {
+      image: "/slider/image1.jpg",
+      title: "Hi",
+    },
     {
       image: "/slider/image1.jpg",
       title: "Hi",
@@ -312,18 +347,38 @@ function App() {
             <img src="/slider/svgviewer-output (2).png" alt="Next" />
           </button>
         </div>
-        <div className="images-list">
+        <div className="images-list" id="popup" >
           {imagesList.map((item) => (
             <ImageCard
               key={item.title} // Ensure each item has a unique key
               image1={item.image}
               image2={item.icon}
               text={item.title}
+              handleOnClick={openModal}
               paragraph={item.description}
             />
           ))}
         </div>
       </div>
+      <Modal
+        isOpen={modalIsOpen}
+        // onAfterOpen={afterOpenModal}
+        onRequestClose={closeModal}
+        // style={customStyles}
+        contentLabel="Example Modal"
+      >
+        <h2 >Hello</h2>
+        <button onClick={closeModal}>close</button>
+        <div>I am a modal</div>
+        <form>
+          <input />
+          <button>tab navigation</button>
+          <button>stays</button>
+          <button>inside</button>
+          <button>the modal</button>
+        </form>
+
+      </Modal>
     </>
   );
 }
