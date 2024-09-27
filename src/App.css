@@ -49,7 +49,7 @@ body {
 /* -----------------modelcard */
 
 .maincard {
-  width: 450px;
+  width: 100%;
 }
 .modelcard {
   display: flex;

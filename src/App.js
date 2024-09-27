@@ -14,6 +14,7 @@ const customStyles = {
     zIndex: 1000,
     overflowY: "auto",
     maxHeight: " calc(90vh - 50px)",
+    width: "600",
   },
 
   overlay: {
@@ -475,22 +476,37 @@ function App() {
                     </button>
                   </div>
                 </div>
-                <div className="googlecard">
-                  <div className="googleimg">
-                    <img src="slider/image3.jpg" alt="Google Image" />
+                <div className="images-list" id="popup">
+                  {imagesList.map((item) => (
+                    <ImageCard
+                      key={item.title}
+                      image1={item.image}
+                      image2={item.icon}
+                      text={item.title}
+                      handleOnClick={() =>
+                        openPopup(item.title, item.image, item.icon, item.description)
+                      }
+                      paragraph={item.description}
+                    />
+                  ))}
+                </div>
+                {/* <div className="popup-img">
+                {imagesList.slice(0, 12).map((List) => (<div className="googlecard">
+                  <div className="googleimg" >
+                    <img src={List.image} alt="Google Image" />
                   </div>
                   <div className="goolgebox">
                     <div className="google-icon">
-                      <img src="slider/uk-flag.png" alt="UK Flag" />
+                      <img src={List.icon} alt="UK Flag" />
                     </div>
                     <div className="google-texticon">
-                      <h1>hello</h1>
+                      <h1>{List.title}</h1>
                     </div>
                   </div>
                   <div className="google-description">
-                    <p>hello hey there</p>
+                    <p>{List.description}</p>
                   </div>
-                </div>
+                </div>))}</div> */}
               </div>
             </div>
           </>
