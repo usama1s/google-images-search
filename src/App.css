@@ -47,39 +47,10 @@ body {
 }
 
 /* -----------------modelcard */
-.ReactModal__Content {
-  background-color: #202124 !important;
-  inset: 13% 0px auto 65% !important;
-  border-radius: 20px !important;
-  border: 1px solid #202124 !important;
-  padding: 6px 16px !important;
-}
-.ReactModal__Overlay {
-  background-color: transparent !important;
-}
 
-.ReactModal__Content {
-  overflow-y: auto !important;
-  max-height: calc(101vh - 80px) !important;
+.maincard {
+  width: 450px;
 }
-
-.ReactModal__Content::-webkit-scrollbar {
-  width: 8px !important;
-}
-
-.ReactModal__Content::-webkit-scrollbar-track {
-  background: #f1f1f1 !important;
-}
-
-.ReactModal__Content::-webkit-scrollbar-thumb {
-  background: #888 !important;
-  border-radius: 10px !important;
-}
-
-.ReactModal__Content::-webkit-scrollbar-thumb:hover {
-  background: #555 !important;
-}
-
 .modelcard {
   display: flex;
   justify-content: space-between;
@@ -151,7 +122,7 @@ body {
   justify-content: center;
   background-color: #394457;
   min-height: 36px;
-  min-width: 190px;
+  min-width: 210px;
   width: 100%;
   font-family: Arial, sans-serif;
   font-size: 14px;
@@ -172,7 +143,7 @@ body {
   justify-content: center;
   background-color: #394457;
   min-height: 36px;
-  min-width: 190px;
+  min-width: 210px;
   width: 100%;
   font-family: Arial, sans-serif;
   font-size: 14px;

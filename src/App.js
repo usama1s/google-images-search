@@ -1,29 +1,44 @@
 import { useMemo, useState } from "react";
 import Card from "./components/card";
 import ImageCard from "./components/image-card";
-
 import "./App.css";
-
-import Modal from "react-modal";
 
 const customStyles = {
   content: {
-    top: "50%",
-    left: "50%",
-    right: "0",
-    bottom: "auto",
+    position: "fixed",
+    top: "15%",
+    right: "2%",
+    padding: "6px 16px",
+    backgroundColor: "#1f1f1f",
+    borderRadius: "10px",
+    zIndex: 1000,
+    overflowY: "auto",
+    maxHeight: " calc(90vh - 50px)",
+  },
+
+  overlay: {
+    position: "fixed",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+
+    zIndex: 999,
   },
 };
 
 function App() {
-  const [modalIsOpen, setModalOpen] = useState(false);
-  // const modalIsOpen = () => setModalOpen(true);
-  const closeModal = () => setModalOpen(false);
-
-  const openModal = () => {
-    console.log("openModal");
-    setModalOpen(true);
-  };
+  const [isPopupOpen, setPopupOpen] = useState(false);
+  const [popUpdata, setPopupData] = useState({
+    title: "",
+    image: "",
+    icon: "",
+    description: "",
+  });
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [firstIndex, setFirstIndex] = useState(0);
+  const [lastIndex, setLastIndex] = useState(10);
+  const [sliderDataView, setSliderDataView] = useState([]);
 
   const sliderData = [
     {
@@ -243,8 +258,8 @@ function App() {
   const imagesList = [
     {
       image: "/slider/image1.jpg",
-      title: "Hello",
-      description: "test",
+      title: "Tree Sunset Clouds - Free stock photo on Pixabay",
+      description: "Pixabay",
       icon: "/slider/image1.jpg",
     },
     {
@@ -321,16 +336,26 @@ function App() {
     },
   ];
 
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [firstIndex, setfirstIndex] = useState(0);
-  const [lastIndex, setLastIndex] = useState(12);
-  const [sliderdataview, setsliderdataview] = useState(sliderData.slice(0, 10));
   useMemo(() => {
-    setsliderdataview(sliderData.slice(firstIndex, lastIndex));
+    setSliderDataView(sliderData.slice(firstIndex, lastIndex));
   }, [firstIndex, lastIndex]);
 
+  const openPopup = (title, image, icon, description) => {
+    setPopupOpen(true);
+    console.log(title);
+    setPopupData({
+      title,
+      image,
+      icon,
+      description,
+    });
+  };
+  const closePopup = () => {
+    setPopupOpen(false);
+  };
+
   const goToPrevious = () => {
-    setfirstIndex(firstIndex - 3 > 0 ? firstIndex - 3 : firstIndex);
+    setFirstIndex(firstIndex - 3 > 0 ? firstIndex - 3 : firstIndex);
     setLastIndex(firstIndex - 3 > 0 ? lastIndex - 3 : lastIndex);
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? sliderData.length - 1 : prevIndex - 1
@@ -338,7 +363,7 @@ function App() {
   };
 
   const goToNext = () => {
-    setfirstIndex(
+    setFirstIndex(
       lastIndex + 3 < sliderData.length ? firstIndex + 3 : firstIndex
     );
     setLastIndex(lastIndex + 3 < sliderData.length ? lastIndex + 3 : lastIndex);
@@ -354,9 +379,8 @@ function App() {
           <button onClick={goToPrevious}>
             <img src="/slider/svgviewer-output (1).png" alt="Previous" />
           </button>
-
-          {sliderdataview.map((slider) => (
-            <Card text={slider.title} image={slider.image} />
+          {sliderDataView.map((slider, i) => (
+            <Card key={i} text={slider.title} image={slider.image} />
           ))}
           <button onClick={goToNext}>
             <img src="/slider/svgviewer-output (2).png" alt="Next" />
@@ -365,109 +389,113 @@ function App() {
         <div className="images-list" id="popup">
           {imagesList.map((item) => (
             <ImageCard
-              key={item.title} // Ensure each item has a unique key
+              key={item.title}
               image1={item.image}
               image2={item.icon}
               text={item.title}
-              handleOnClick={openModal}
+              handleOnClick={() =>
+                openPopup(item.title, item.image, item.icon, item.description)
+              }
               paragraph={item.description}
             />
           ))}
         </div>
       </div>
-      <Modal
-        isOpen={modalIsOpen}
-        // onAfterOpen={afterOpenModal}
-        onRequestClose={closeModal}
-        style={customStyles}
-        contentLabel="Example Modal"
-      >
-        <div className="maincard">
-          <div className="modelcard">
-            <div className="modelbox">
-              <div className="modelimage">
-                <img src="/slider/image3.jpg"></img>
+      <div>
+        {isPopupOpen && (
+          <>
+            <div style={customStyles.content}>
+              <div className="maincard">
+                <div className="modelcard">
+                  <div className="modelbox">
+                    <div className="modelimage">
+                      <img src={popUpdata.image} alt="Popup Image" />
+                    </div>
+                    <div className="modeltextbox">
+                      <h2>{popUpdata.description}</h2>
+                    </div>
+                    <div className="arrowbox">
+                      <img
+                        src="/slider/arrow-left-svgrepo-com.svg"
+                        alt="Left Arrow"
+                      />
+                      <img
+                        src="/slider/arrow-left-svgrepo-com (1).svg"
+                        alt="Left Arrow"
+                      />
+                    </div>
+                    <div className="optionbox">
+                      <img
+                        src="/slider/options-vertical-svgrepo-com.svg"
+                        alt="Options"
+                      />
+                    </div>
+                  </div>
+                  {/* Close button */}
+                  <button onClick={closePopup}>
+                    <img src="/slider/close-svgrepo-com.svg" alt="Close" />
+                  </button>
+                </div>
+                <div className="maincardimage">
+                  <div className="imagecard">
+                    <img src={popUpdata.image} alt="Main Image" />
+                  </div>
+                </div>
+                <div className="vistbox">
+                  <div className="dispersion">
+                    <p>{popUpdata.title}</p>
+                  </div>
+                  <div className="vistbutton">
+                    <button>
+                      Visit
+                      <span className="arrow-right">
+                        <img
+                          src="/slider/right-arrow-svgrepo-com.svg"
+                          alt="Arrow"
+                        />
+                      </span>
+                    </button>
+                  </div>
+                </div>
+                <div className="button-section">
+                  <div className="share-button">
+                    <button>
+                      <span className="share-img">
+                        <img src="slider/share-svgrepo-com.svg" alt="Share" />
+                      </span>
+                      Share
+                    </button>
+                  </div>
+                  <div className="save-button">
+                    <button>
+                      <span className="save-image">
+                        <img src="slider/save-svgrepo-com.svg" alt="Save" />
+                      </span>
+                      Save
+                    </button>
+                  </div>
+                </div>
+                <div className="googlecard">
+                  <div className="googleimg">
+                    <img src="slider/image3.jpg" alt="Google Image" />
+                  </div>
+                  <div className="goolgebox">
+                    <div className="google-icon">
+                      <img src="slider/uk-flag.png" alt="UK Flag" />
+                    </div>
+                    <div className="google-texticon">
+                      <h1>hello</h1>
+                    </div>
+                  </div>
+                  <div className="google-description">
+                    <p>hello hey there</p>
+                  </div>
+                </div>
               </div>
-              <div className="modeltextbox">
-                <h2>The Learning Scientist...</h2>
-              </div>
-              <div className="arrowbox">
-                <img
-                  src="/slider/arrow-left-svgrepo-com.svg"
-                  alt="Left Arrow"
-                />
-                <img
-                  src="/slider/arrow-left-svgrepo-com (1).svg"
-                  alt="Left Arrow"
-                />
-              </div>
-              <div className="optionbox">
-                <img
-                  src="/slider/options-vertical-svgrepo-com.svg"
-                  alt="Options"
-                />
-              </div>
             </div>
-            <button onClick={closeModal}>
-              <img src="/slider/close-svgrepo-com.svg"></img>
-            </button>
-          </div>
-          <div className="maincardimage">
-            <div className="imagecard">
-              <img src="slider/image3.jpg"></img>
-            </div>
-          </div>
-          <div className="vistbox">
-            <div className="dispersion">
-              <p>GUEST POST: What Causes Test-score Inflation? Comparing Two</p>
-            </div>
-            <div className="vistbutton">
-              <button>
-                Visit
-                <span className="arrow-right">
-                  <img src="/slider/right-arrow-svgrepo-com.svg"></img>
-                </span>
-              </button>
-            </div>
-          </div>
-          <div className="button-section">
-            <div className="share-button">
-              <button>
-                {" "}
-                <span className="share-img">
-                  <img src="slider/share-svgrepo-com.svg"></img>
-                </span>{" "}
-                Share{" "}
-              </button>
-            </div>
-            <div className="save-button">
-              <button>
-                {" "}
-                <span className="save-image">
-                  <img src="slider/save-svgrepo-com.svg"></img>
-                </span>{" "}
-                Save
-              </button>
-            </div>
-          </div>
-          <div className="googlecard">
-            <div className="googleimg">
-              <img src="slider/image3.jpg" alt="Google Image" />
-            </div>
-            <div className="goolgebox">
-              <div className="google-icon">
-                <img src="slider/uk-flag.png" alt="UK Flag" />
-              </div>
-              <div className="google-texticon">
-                <h1>hello</h1>
-              </div>
-            </div>
-            <div className="google-description">
-              <p>hello hey there</p>
-            </div>
-          </div>
-        </div>
-      </Modal>
+          </>
+        )}
+      </div>
     </>
   );
 }
