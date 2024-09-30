@@ -1,22 +1,22 @@
 import React from "react";
 import "./image-card.css";
 
-function ImageCard({ image1, image2, text, paragraph ,handleOnClick }) {
+function ImageCard({ image, icon, text, url_title, url ,handleOnClick }) {
 
   return (
-    <a className="image-item" onClick={handleOnClick}>
-      <div className="img">
-        <img src={image1} alt="Main visual" />
+    <a className="image-item" >
+      <div className="img" onClick={handleOnClick}>
+        <img src={image} alt="Main visual" />
       </div>
-      <div className="content">
+      <a target="_blank" href={url} className="content">
         <div className="description">
           <div className="icon">
-            <img src={image2} alt="Icon" />
+            <img src={icon} alt="Icon" />
           </div>
-          <p>{paragraph}</p>
+          <p>{url_title}</p>
         </div>
         <h2>{text}</h2>
-      </div>
+      </a>
     </a>
   );
 }
